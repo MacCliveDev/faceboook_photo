@@ -19,9 +19,12 @@ app.listen(5005, () => {
 	console.log(' Server Open at : ', '\x1b[33m', '\x1b[1m', 'http://localhost:5005', '\x1b[0m')
 })
 
+var url = 'http://i.qkme.me/3ofxwf.jpg' 
+var access_token = 'Paste your access_token here'
+
 app.get('/', function(req, res){
 	var dataString = 
-	'url=http://i.qkme.me/3ofxwf.jpg&access_token=EAACEdEose0cBAFd2cxC8iXZAo0MkqPo0aMmyHU1We8bv9dn6WEL5it8hE8ld8ZAldhSrAXstlZBCeVEDiRCzZChZBSZAVIKrdGFvq1d6aCR1ZCCdrH2Nwdpu5bz8xjKBO5dfTl1KlZAbua1MIG3cXwEK3bFaLwbexCUms1DFyPDOKUgtwoD1eIRxCrMs1uoDUYIZD';
+	'url='+ url + '&access_token=' + access_token
 
 	var options = {
 			url: 'https://graph.facebook.com/v2.4/me/photos',
@@ -31,7 +34,7 @@ app.get('/', function(req, res){
 
 	request(options, function(error, response, body){
 		 if (!error && response.statusCode == 200) {
-				console.log(body);
+				res.status(response.statusCode).send(body)
 	    }
 	    res.end()
 	})
