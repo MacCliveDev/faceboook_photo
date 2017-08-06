@@ -1,0 +1,23 @@
+{
+  "name": "facebook_photo",
+  "version": "1.0.0",
+  "description": "\"Uploads photos to facebook via the api\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MacCliveDev/faceboook_photo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MacCliveDev/faceboook_photo/issues"
+  },
+  "homepage": "https://github.com/MacCliveDev/faceboook_photo#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
+}
