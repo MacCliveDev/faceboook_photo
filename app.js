@@ -22,7 +22,7 @@ app.listen(5005, () => {
 var url = 'http://i.qkme.me/3ofxwf.jpg' 
 var access_token = 'Paste your access_token here'
 
-app.get('/', function(req, res){
+app.get('/', (req, res) => {
 	var dataString = 
 	'url='+ url + '&access_token=' + access_token
 
@@ -32,7 +32,7 @@ app.get('/', function(req, res){
 	    body: dataString
 	}
 
-	request(options, function(error, response, body){
+	request(options, (error, response, body) => {
 		 if (!error && response.statusCode == 200) {
 				res.status(response.statusCode).send(body)
 	    }
